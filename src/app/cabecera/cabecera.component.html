@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="assets/imagenes/logo_angular.svg" width="30" height="30" alt="">
+    </a>
+  
+    <div id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/inicio']">Inicio</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/listado-libros']">Listado libros</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/sobre-nosotros']">Acerca de</a>
+            </li>            
+        </ul>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom mb-5">
+    <span class="mr-1">Libros vistos:</span>
+    <ng-template #sinLibros><small class="text-muted">No se han visto libros.</small></ng-template>
+    <span *ngIf="librosVistos.verListado(); else sinLibros">
+        <span class="badge badge-secondary mx-1" *ngFor="let libro of librosVistos.verListado()">{{ libro.titulo }}</span>
+    </span>
+</nav>

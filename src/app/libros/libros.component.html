@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+    <h3 *ngIf="errorHttp">No se han podido cargar los libros</h3>
+    <div class="loader text-center" *ngIf="cargando"></div>
+</div>
+
+<div class="card-columns">
+    <div class="card border-secondary sombra" *ngFor="let libro of libros">
+        <img class="card-img-top" src="{{ libro.imagen }}" alt="Card image cap">
+        <div class="card-body text-secondary">
+            <h5 class="card-title">{{ libro.titulo }}</h5>
+            <a
+                class="btn btn-outline-secondary btn-block"
+                (click)="agregarLibro(libro)"
+                [routerLink]="['/informacion', libro.id]"
+            >Ver más...</a>
+        </div>
+    </div>
+</div>

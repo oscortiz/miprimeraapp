@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+    <div class="card border-secondary" style="width: 30rem;">
+        <img class="card-img-top" src="{{ libroClick.imagen }}" alt="Card image cap">
+        <div class="card-body text-secondary">
+            <h5 class="card-title">{{ libroClick.titulo }}</h5>
+            <p>Escrito por: {{ libroClick.autor }}</p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Voluptas corrupti dolorum voluptate. Ratione error vitae delectus natus cum. 
+                Nemo hic est voluptate voluptates quae officia vel, cum error ad repudiandae!
+            </p>
+            <a
+                class="btn btn-outline-secondary btn-block"
+                [routerLink]="['/listado-libros']"
+            >Volver...</a>
+        </div>
+    </div>
+</div>
