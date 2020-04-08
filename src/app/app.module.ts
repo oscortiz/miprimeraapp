@@ -12,9 +12,9 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { Error404Component } from './error404/error404.component';
 import { DetalleLibroComponent } from './detalle-libro/detalle-libro.component';
+import { RendererdemoComponent } from './rendererdemo/rendererdemo.component';
 
 import { RUTAS } from './app.routes';
-import { RendererdemoComponent } from './rendererdemo/rendererdemo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { RendererdemoComponent } from './rendererdemo/rendererdemo.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(RUTAS),
+    RouterModule.forRoot(RUTAS, { useHash: true }),
     HttpClientModule
   ],
   providers: [

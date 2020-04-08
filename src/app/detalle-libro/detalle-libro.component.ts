@@ -9,7 +9,6 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class DetalleLibroComponent implements OnInit {
 
   libros: Array<object>;
-  //libroId: number;
   libroClick: any;
   
   constructor(private activatedRoute:ActivatedRoute) {
@@ -29,14 +28,8 @@ export class DetalleLibroComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      //this.libroId = params['libroId'];
-      //this.libroClick = this.libroBuscador(params['libroId']);
       this.libroClick = this.libros.filter((libro: any) => libro.id == params['libroId'])[0];
     })
   }
-/*
-  libroBuscador(_libroId) {
-    return this.libros.filter((libro: any) => libro.id == _libroId)[0];
-  }
-*/
+
 }
